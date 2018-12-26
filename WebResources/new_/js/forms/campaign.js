@@ -13,7 +13,6 @@ campaign.OnLoad = function () {
     Xrm.Helpers.Form.Subscriber
         .forControl("actualend")
         .addOnChange(setIsEmailCreated);
-
 }
 
 
@@ -23,9 +22,9 @@ campaign.OnLoad = function () {
 * при обновлении поля "Дата окончания".
 */
 function setIsEmailCreated() {
-Xrm.Page.getAttribute("new_isemail_created").setValue(false);
-Xrm.Page.getAttribute("new_isemail_created").setValue(false);
-Xrm.Page.getAttribute("new_isemail_created").setValue(false);
+    Xrm.Page.getAttribute("new_isemail_created").setValue(false);
+    Xrm.Page.getAttribute("new_isemail_created").setValue(false);
+    Xrm.Page.getAttribute("new_isemail_created").setValue(false);
     Xrm.Page.getAttribute("new_isemail_created").setValue(false);
 }
 
