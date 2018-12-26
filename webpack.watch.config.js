@@ -12,7 +12,7 @@ var includeFilePatterns = ['./WebResources/new_/js/**/*.js'];
 const entry = glob.sync(includeFilePatterns.concat(excludeFilePatterns))
 	.reduce((x, y) => Object.assign(x,
 			{
-				[y.replace('.js', '')]: y
+				[y.replace('.js', '').replace('/','')]: y
 			}),
 		{});
 
@@ -43,12 +43,14 @@ module.exports = {
 			}
 		]
 	},
-	watch: true,
 	plugins: [
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'
-		})
-		//new CleanWebpackPlugin(["dist-dev"])
+		}),
+		new webpack.ProvidePlugin({
+			Promise: ['Promise']
+		}),
+		new CleanWebpackPlugin(["dist-dev"])
 	]
 };
