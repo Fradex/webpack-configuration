@@ -88,7 +88,7 @@ class WebResourceManager {
                     content: base64.encode(contents),
                     webresourceid: resource.webresourceid
                 },
-                headers: { 'Content-Type': 'text/xml' }
+                headers: { 'Content-Type': 'application/json' }
 
             }, function (err, res) {
                 if (err) {
