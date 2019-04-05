@@ -3,7 +3,7 @@ const glob = require("glob-all");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const PostCompile = require('./webpack.plugin');
-const PostCompileDetector = require('./src/postcompileDetector');
+const PostCompileDetector = require('./src/postCompileDetector');
 
 var excludeFilePatterns = [
 	'!./WebResources/new_/js/lib/**','!./WebResources/new_/js/common/**', '!**/(*.min).js',
@@ -42,7 +42,14 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['env']
+							presets: ['env'],
+							plugins: [
+								[
+									"transform-runtime", {
+										"regenerator": true,
+									}
+								]
+							]
 						}
 					},
 					"eslint-loader"

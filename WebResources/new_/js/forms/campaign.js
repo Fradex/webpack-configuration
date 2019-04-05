@@ -13,6 +13,9 @@ campaign.OnLoad = function () {
     Xrm.Helpers.Form.Subscriber
         .forControl("actualend")
         .addOnChange(setIsEmailCreated);
+        Xrm.Helpers.Form.Subscriber
+        .forControl("actualend")
+        .addOnChange(setIsEmailCreated);
 }
 
 
